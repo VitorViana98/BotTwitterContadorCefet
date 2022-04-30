@@ -27,8 +27,8 @@ jobs:
           # If you are using yarn, change the line below from "npm" to "yarn"
           pkg-manager: yarn
       - run:
-          name: Run build
-          command: yarn run build --if-present
+          name: Run install
+          command: yarn install
 
 workflows:
   # Below is the definition of your workflow.
