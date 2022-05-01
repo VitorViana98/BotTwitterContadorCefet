@@ -7,7 +7,7 @@ const app = express();
 app.listen(process.env.PORT || 9000, () => { });
 
 app.get('/', (req, res) => {
-  return res.json({ message: 'Servidor Rodando' });
+  return res.json({ message: 'Servidor Online 😈😈' });
 });
 
 function countDate() {
