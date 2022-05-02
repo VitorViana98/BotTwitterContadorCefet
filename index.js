@@ -7,7 +7,7 @@ const app = express();
 app.listen(process.env.PORT || 9000, () => { });
 
 app.get('/', (req, res) => {
-  return res.json('Server Online 😈😈, go to https://twitter.com/calendariocefet');
+  return res.json('Server Online 😈😈 Go To https://twitter.com/calendariocefet');
 });
 
 function countDate() {
@@ -49,7 +49,7 @@ function postTweet() {
   console.log('progressPercentage:', progressPercentage)
 
   const tweetText = `${daysToEnd > 1 ? 'Faltam' : 'Falta'
-    } ${daysToEnd} dia(s) para o fim do período.\nJa passmos por ${renderProgress(
+    } ${daysToEnd} dia(s) para o fim do período.\nJa passamos por ${renderProgress(
       progressPercentage
     )} ${progressPercentage}%  ${daysToEnd > 10 ? '😑' : '😍'} \n`;
 
