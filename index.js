@@ -4,11 +4,15 @@ const schedule = require('node-schedule');
 const express = require('express');
 const app = express();
 
-app.listen(process.env.PORT || 9000, () => { });
+const serverPort = 9100
+
+app.listen(process.env.PORT || serverPort, () => { });
 
 app.get('/', (req, res) => {
   return res.json('Server Online 😈😈 Go To https://twitter.com/calendariocefet');
 });
+
+console.log(`Servidor Rodando Na Porta ${serverPort}`)
 
 function countDate() {
   const todayDate = new Date();
@@ -24,7 +28,7 @@ function countDate() {
   const totalDays = Math.ceil(totalMiliSeconds / (1000 * 3600 * 24));
 
 
-  const progressPercentage = (100 - (daysToEnd / totalDays) * 100).toFixed(3);
+  const progressPercentage = (100 - (daysToEnd / totalDays) * 100).toFixed(2);
   console.log('daysToEnd', daysToEnd, 'totalDays', totalDays)
   return {
     daysToEnd,
@@ -35,7 +39,7 @@ function countDate() {
 
 function renderProgress(progressPercentage) {
   const string = Array(15).fill('░');
-  const totalProgress = (progressPercentage / 15).toFixed(0);
+  const totalProgress = Math.floor(progressPercentage * 15 / 100);
   console.log('totalProgress:', totalProgress, progressPercentage)
 
   for (let i = 0; i < totalProgress; i++) {
