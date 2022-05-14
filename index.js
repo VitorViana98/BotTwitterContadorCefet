@@ -61,16 +61,19 @@ function postTweet() {
 
   Bot.v1
     .tweet(tweetText)
-    .then(() => {
+    .then((res) => {
       console.log('Tweet Realizado.');
+      console.log(`Veja Aqui => https://twitter.com/${res.user.screen_name}/status/${res.id_str}`);
+      console.log(res);
     })
     .catch((err) => {
+      console.log('Erro Ao Postar Tweet!');
       console.log(err);
     });
 }
 
-schedule.scheduleJob('0 10 * * *', function () {
-  console.log('Função executando.');
-  postTweet();
-  console.log('Função Concluída');
-});
+// schedule.scheduleJob('* * * * *', function () {
+console.log('Função executando.');
+postTweet();
+console.log('Função Concluída');
+// });
