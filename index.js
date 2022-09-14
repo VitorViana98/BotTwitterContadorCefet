@@ -16,8 +16,8 @@ console.log(`Servidor Rodando Na Porta ${serverPort}`)
 
 function countDate() {
   const todayDate = new Date();
-  const finalDate = new Date(2022, 07, 19);   //Por algum motivo esta gerando com um mes acima
-  const firstDate = new Date(2022, 03, 18);   //Por algum motivo esta gerando com um mes acima
+  const finalDate = new Date(2023, 00, 19);   //Por algum motivo esta gerando com um mes acima
+  const firstDate = new Date(2022, 8, 14);   //Por algum motivo esta gerando com um mes acima
 
   console.log('todayDate', todayDate, 'finalDate', finalDate, 'firstDate', firstDate)
 
